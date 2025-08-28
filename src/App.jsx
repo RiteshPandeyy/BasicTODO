@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import AddTask from "./components/AddTask";
 import { Header } from "./components/Header";
+import { v4 as uuidv4 } from "uuid";
 import ViewTask from "./components/ViewTask";
 import Modal from "./components/Modal";
 
@@ -22,7 +23,7 @@ function App() {
     if (!title || !description) return;
 
     const newTask = {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       title,
       description,
       completed: false,
